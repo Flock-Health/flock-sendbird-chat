@@ -1,5 +1,5 @@
 /*!
- * my-app v1.0.0
+ * flock-sendbird-chat v0.0.1
  * MIT Licensed
  */
 (window["webpackJsonpFlockChat"] = window["webpackJsonpFlockChat"] || []).push([[2],{

@@ -1,5 +1,5 @@
 /*!
- * my-app v1.0.0
+ * flock-sendbird-chat v0.0.1
  * MIT Licensed
  */
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -57,7 +57,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + chunkId + ".my-app.js"
+/******/ 		return __webpack_require__.p + "" + chunkId + ".flock-sendbird-chat.js"
 /******/ 	}
 /******/
 /******/ 	// The require function
