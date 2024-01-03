@@ -1,12 +1,11 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import {
-  Sendbird,
+  SendBirdProvider,
   ChannelList,
   Channel,
   ChannelSettings,
-  MessageSearchPannel,
-  Thread,
 } from "@sendbird/uikit-react";
+import Thread from "@sendbird/uikit-react/Thread";
 import "sendbird-uikit/dist/index.css";
 
 import "./index.css";
@@ -22,82 +21,36 @@ export default function Component() {
   const [startingPoint, setStartingPoint] = (useState < number) | (null > null);
 
   const {
-    customApiHost = "",
-    customWebSocketHost = "",
-    breakpoint = null,
     userListQuery = null,
     profileUrl = "",
     dateLocale = null,
-    config = {},
-    voiceRecord,
     colorSet = null,
-    stringSet = null,
     allowProfileEdit = false,
-    disableMarkAsDelivered = false,
-    renderUserProfile = null,
     onProfileEditSuccess = null,
-    imageCompression = {},
     disableAutoSelect = false,
-    sdkInitParams,
-    customExtensionParams,
-    eventHandlers,
-    uikitOptions,
     // The below configs are duplicates of the Dashboard UIKit Configs.
     // Since their default values will be set in the Sendbird component,
     // we don't need to set them here.
     showSearchIcon,
-    isMentionEnabled,
     replyType,
-    disableUserProfile,
-    isVoiceMessageEnabled,
     isMultipleFilesMessageEnabled,
-    isTypingIndicatorEnabledOnChannelList,
-    isMessageReceiptStatusEnabledOnChannelList,
-    isUserIdUsedForNickname = true,
     channelUrlList = null,
   } = props;
 
   return (
-    <Sendbird
-      stringSet={stringSet}
+    <SendBirdProvider
       appId={props.model?.sendbirdAppId}
       userId={props.model?.userId}
       accessToken={props.model?.accessToken}
-      customApiHost={customApiHost}
-      customWebSocketHost={customWebSocketHost}
-      breakpoint={breakpoint}
       theme="light"
       nickname={props.model?.userNickname}
       profileUrl={profileUrl}
       dateLocale={dateLocale}
       userListQuery={userListQuery}
-      config={config}
       colorSet={colorSet}
-      disableUserProfile={disableUserProfile}
-      disableMarkAsDelivered={disableMarkAsDelivered}
-      renderUserProfile={renderUserProfile}
-      imageCompression={imageCompression}
-      isReactionEnabled={true}
-      isMentionEnabled={isMentionEnabled}
-      isVoiceMessageEnabled={isVoiceMessageEnabled}
-      isMultipleFilesMessageEnabled={isMultipleFilesMessageEnabled}
-      voiceRecord={voiceRecord}
       onUserProfileMessage={(channel) => {
         setCurrentChannel(channel);
       }}
-      isTypingIndicatorEnabledOnChannelList={
-        isTypingIndicatorEnabledOnChannelList
-      }
-      isMessageReceiptStatusEnabledOnChannelList={
-        isMessageReceiptStatusEnabledOnChannelList
-      }
-      replyType={replyType}
-      showSearchIcon={showSearchIcon}
-      uikitOptions={uikitOptions}
-      isUserIdUsedForNickname={isUserIdUsedForNickname}
-      sdkInitParams={sdkInitParams}
-      customExtensionParams={customExtensionParams}
-      eventHandlers={eventHandlers}
     >
       <div className="sendbird-app__wrap">
         <div className="sendbird-app__channellist-wrap">
@@ -189,27 +142,6 @@ export default function Component() {
             />
           </div>
         )}
-        {showSearch && (
-          <div className="sendbird-app__searchpanel-wrap">
-            <MessageSearchPannel
-              channelUrl={currentChannel?.url || ""}
-              onResultClick={(message) => {
-                if (message.messageId === highlightedMessage) {
-                  setHighlightedMessage?.(null);
-                  setTimeout(() => {
-                    setHighlightedMessage?.(message.messageId);
-                  });
-                } else {
-                  setStartingPoint?.(message.createdAt);
-                  setHighlightedMessage?.(message.messageId);
-                }
-              }}
-              onCloseClick={() => {
-                setShowSearch(false);
-              }}
-            />
-          </div>
-        )}
         {showThread && (
           <Thread
             className="sendbird-app__thread"
@@ -232,6 +164,6 @@ export default function Component() {
           />
         )}
       </div>
-    </Sendbird>
+    </SendBirdProvider>
   );
 }

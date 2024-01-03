@@ -2706,7 +2706,7 @@ module.exports = ReactPropTypesSecret;
 __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
-__webpack_require__.d(__webpack_exports__, "default", function() { return /* binding */ src_default_0; });
+__webpack_require__.d(__webpack_exports__, "default", function() { return /* binding */ Component; });
 
 // EXTERNAL MODULE: external {"root":"React","commonjs2":"react","commonjs":"react","amd":"react"}
 var external_root_React_commonjs2_react_commonjs_react_amd_react_ = __webpack_require__(1);
@@ -39979,33 +39979,167 @@ var dist = __webpack_require__(16);
 var src_0 = __webpack_require__(17);
 
 // CONCATENATED MODULE: ./src/index.js
-function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; _setPrototypeOf(subClass, superClass); }
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf ? Object.setPrototypeOf.bind() : function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
 
 
-var src_default_0 = /*#__PURE__*/function (_Component) {
-  _inheritsLoose(_default, _Component);
-  function _default() {
-    return _Component.apply(this, arguments) || this;
-  }
-  var _proto = _default.prototype;
-  _proto.render = function render() {
-    var _this$props$model, _this$props$model2, _this$props$model3, _this$props$model4;
-    return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(App, {
-      appId: (_this$props$model = this.props.model) === null || _this$props$model === void 0 ? void 0 : _this$props$model.sendbirdAppId,
-      accessToken: (_this$props$model2 = this.props.model) === null || _this$props$model2 === void 0 ? void 0 : _this$props$model2.accessToken,
-      userId: (_this$props$model3 = this.props.model) === null || _this$props$model3 === void 0 ? void 0 : _this$props$model3.userId,
-      nickname: (_this$props$model4 = this.props.model) === null || _this$props$model4 === void 0 ? void 0 : _this$props$model4.userNickname,
-      theme: "light",
-      useReaction: true,
-      useMessageGrouping: true
-    });
-  };
-  return _default;
-}(external_root_React_commonjs2_react_commonjs_react_amd_react_["Component"]);
 
+function Component() {
+  var _props$model, _props$model2, _props$model3, _props$model4;
+  var _useState = Object(external_root_React_commonjs2_react_commonjs_react_amd_react_["useState"])(null),
+    currentChannel = _useState[0],
+    setCurrentChannel = _useState[1];
+  var _useState2 = Object(external_root_React_commonjs2_react_commonjs_react_amd_react_["useState"])(false),
+    showThread = _useState2[0],
+    setShowThread = _useState2[1];
+  var _ref = external_root_React_commonjs2_react_commonjs_react_amd_react_["useState"] < SendableMessageType | null > null,
+    threadTargetMessage = _ref[0],
+    setThreadTargetMessage = _ref[1];
+  var _useState3 = Object(external_root_React_commonjs2_react_commonjs_react_amd_react_["useState"])(false),
+    showSettings = _useState3[0],
+    setShowSettings = _useState3[1];
+  var _useState4 = Object(external_root_React_commonjs2_react_commonjs_react_amd_react_["useState"])(false),
+    showSearch = _useState4[0],
+    setShowSearch = _useState4[1];
+  var _ref2 = external_root_React_commonjs2_react_commonjs_react_amd_react_["useState"] < number | null > null,
+    highlightedMessage = _ref2[0],
+    setHighlightedMessage = _ref2[1];
+  var _ref3 = external_root_React_commonjs2_react_commonjs_react_amd_react_["useState"] < number | null > null,
+    startingPoint = _ref3[0],
+    setStartingPoint = _ref3[1];
+  var _props = props,
+    _props$userListQuery = _props.userListQuery,
+    userListQuery = _props$userListQuery === void 0 ? null : _props$userListQuery,
+    _props$profileUrl = _props.profileUrl,
+    profileUrl = _props$profileUrl === void 0 ? "" : _props$profileUrl,
+    _props$dateLocale = _props.dateLocale,
+    dateLocale = _props$dateLocale === void 0 ? null : _props$dateLocale,
+    _props$colorSet = _props.colorSet,
+    colorSet = _props$colorSet === void 0 ? null : _props$colorSet,
+    _props$allowProfileEd = _props.allowProfileEdit,
+    allowProfileEdit = _props$allowProfileEd === void 0 ? false : _props$allowProfileEd,
+    _props$onProfileEditS = _props.onProfileEditSuccess,
+    onProfileEditSuccess = _props$onProfileEditS === void 0 ? null : _props$onProfileEditS,
+    _props$disableAutoSel = _props.disableAutoSelect,
+    disableAutoSelect = _props$disableAutoSel === void 0 ? false : _props$disableAutoSel,
+    showSearchIcon = _props.showSearchIcon,
+    replyType = _props.replyType,
+    isMultipleFilesMessageEnabled = _props.isMultipleFilesMessageEnabled,
+    _props$channelUrlList = _props.channelUrlList,
+    channelUrlList = _props$channelUrlList === void 0 ? null : _props$channelUrlList;
+  return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(Sendbird, {
+    appId: (_props$model = props.model) === null || _props$model === void 0 ? void 0 : _props$model.sendbirdAppId,
+    userId: (_props$model2 = props.model) === null || _props$model2 === void 0 ? void 0 : _props$model2.userId,
+    accessToken: (_props$model3 = props.model) === null || _props$model3 === void 0 ? void 0 : _props$model3.accessToken,
+    theme: "light",
+    nickname: (_props$model4 = props.model) === null || _props$model4 === void 0 ? void 0 : _props$model4.userNickname,
+    profileUrl: profileUrl,
+    dateLocale: dateLocale,
+    userListQuery: userListQuery,
+    colorSet: colorSet,
+    onUserProfileMessage: function onUserProfileMessage(channel) {
+      setCurrentChannel(channel);
+    }
+  }, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+    className: "sendbird-app__wrap"
+  }, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+    className: "sendbird-app__channellist-wrap"
+  }, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(ChannelList, {
+    allowProfileEdit: allowProfileEdit,
+    activeChannelUrl: currentChannel === null || currentChannel === void 0 ? void 0 : currentChannel.url,
+    onProfileEditSuccess: onProfileEditSuccess,
+    disableAutoSelect: disableAutoSelect,
+    onChannelSelect: function onChannelSelect(channel) {
+      setStartingPoint === null || setStartingPoint === void 0 ? void 0 : setStartingPoint(null);
+      setHighlightedMessage === null || setHighlightedMessage === void 0 ? void 0 : setHighlightedMessage(null);
+      if (channel) {
+        setCurrentChannel(channel);
+      } else {
+        setCurrentChannel(null);
+      }
+    },
+    queries: channelUrlList ? {
+      channelListQuery: {
+        channelUrlsFilter: channelUrlList
+      }
+    } : null
+  })), /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+    className: "\n          " + (showSettings ? "sendbird-app__conversation--settings-open" : "") + "\n          " + (showSearch ? "sendbird-app__conversation--search-open" : "") + "\n          sendbird-app__conversation-wrap\n        "
+  }, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(Channel, {
+    channelUrl: (currentChannel === null || currentChannel === void 0 ? void 0 : currentChannel.url) || "",
+    onChatHeaderActionClick: function onChatHeaderActionClick() {
+      setShowSearch(false);
+      setShowThread(false);
+      setShowSettings(!showSettings);
+    },
+    onSearchClick: function onSearchClick() {
+      setShowSettings(false);
+      setShowThread(false);
+      setShowSearch(!showSearch);
+    },
+    onReplyInThread: function onReplyInThread(_ref4) {
+      var message = _ref4.message;
+      // parent message
+      setShowSettings(false);
+      setShowSearch(false);
+      if (replyType === "THREAD") {
+        setThreadTargetMessage(message);
+        setShowThread(true);
+      }
+    },
+    onQuoteMessageClick: function onQuoteMessageClick(_ref5) {
+      var message = _ref5.message;
+      // thread message
+      setShowSettings(false);
+      setShowSearch(false);
+      if (replyType === "THREAD") {
+        setThreadTargetMessage(message);
+        setShowThread(true);
+      }
+    },
+    onMessageAnimated: function onMessageAnimated() {
+      setHighlightedMessage(null);
+    },
+    onMessageHighlighted: function onMessageHighlighted() {
+      setHighlightedMessage === null || setHighlightedMessage === void 0 ? void 0 : setHighlightedMessage(null);
+    },
+    showSearchIcon: showSearchIcon,
+    startingPoint: startingPoint,
+    animatedMessage: highlightedMessage,
+    isReactionEnabled: true,
+    replyType: replyType,
+    isMessageGroupingEnabled: true,
+    isMultipleFilesMessageEnabled: isMultipleFilesMessageEnabled
+  })), showSettings && /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
+    className: "sendbird-app__settingspanel-wrap"
+  }, /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(ChannelSettings, {
+    className: "sendbird-channel-settings",
+    channelUrl: (currentChannel === null || currentChannel === void 0 ? void 0 : currentChannel.url) || "",
+    onCloseClick: function onCloseClick() {
+      setShowSettings(false);
+    }
+  })), showThread && /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(Thread, {
+    className: "sendbird-app__thread",
+    channelUrl: (currentChannel === null || currentChannel === void 0 ? void 0 : currentChannel.url) || "",
+    message: threadTargetMessage,
+    onHeaderActionClick: function onHeaderActionClick() {
+      setShowThread(false);
+    },
+    onMoveToParentMessage: function onMoveToParentMessage(_ref6) {
+      var message = _ref6.message,
+        channel = _ref6.channel;
+      if ((channel === null || channel === void 0 ? void 0 : channel.url) !== (currentChannel === null || currentChannel === void 0 ? void 0 : currentChannel.url)) {
+        setCurrentChannel(channel);
+      }
+      if ((message === null || message === void 0 ? void 0 : message.messageId) !== highlightedMessage) {
+        setStartingPoint === null || setStartingPoint === void 0 ? void 0 : setStartingPoint(message === null || message === void 0 ? void 0 : message.createdAt);
+      }
+      setTimeout(function () {
+        setHighlightedMessage(message === null || message === void 0 ? void 0 : message.messageId);
+      }, 500);
+    }
+  })));
+}
 
 /***/ })
 /******/ ])["default"];
