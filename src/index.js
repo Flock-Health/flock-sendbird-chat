@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {
-  SendirdProvider,
+  SendBirdProvider,
   ChannelList,
   Channel,
   ChannelSettings,
@@ -36,7 +36,7 @@ export default function Component() {
   } = props;
 
   return (
-    <SendirdProvider
+    <SendBirdProvider
       appId={props.model?.sendbirdAppId}
       userId={props.model?.userId}
       accessToken={props.model?.accessToken}
@@ -162,6 +162,6 @@ export default function Component() {
           />
         )}
       </div>
-    </SendirdProvider>
+    </SendBirdProvider>
   );
 }

@@ -39992,21 +39992,21 @@ function Component() {
   var _useState2 = Object(external_root_React_commonjs2_react_commonjs_react_amd_react_["useState"])(false),
     showThread = _useState2[0],
     setShowThread = _useState2[1];
-  var _ref = external_root_React_commonjs2_react_commonjs_react_amd_react_["useState"] < SendableMessageType | null > null,
-    threadTargetMessage = _ref[0],
-    setThreadTargetMessage = _ref[1];
-  var _useState3 = Object(external_root_React_commonjs2_react_commonjs_react_amd_react_["useState"])(false),
-    showSettings = _useState3[0],
-    setShowSettings = _useState3[1];
+  var _useState3 = Object(external_root_React_commonjs2_react_commonjs_react_amd_react_["useState"])(null),
+    threadTargetMessage = _useState3[0],
+    setThreadTargetMessage = _useState3[1];
   var _useState4 = Object(external_root_React_commonjs2_react_commonjs_react_amd_react_["useState"])(false),
-    showSearch = _useState4[0],
-    setShowSearch = _useState4[1];
-  var _ref2 = external_root_React_commonjs2_react_commonjs_react_amd_react_["useState"] < number | null > null,
-    highlightedMessage = _ref2[0],
-    setHighlightedMessage = _ref2[1];
-  var _ref3 = external_root_React_commonjs2_react_commonjs_react_amd_react_["useState"] < number | null > null,
-    startingPoint = _ref3[0],
-    setStartingPoint = _ref3[1];
+    showSettings = _useState4[0],
+    setShowSettings = _useState4[1];
+  var _useState5 = Object(external_root_React_commonjs2_react_commonjs_react_amd_react_["useState"])(false),
+    showSearch = _useState5[0],
+    setShowSearch = _useState5[1];
+  var _useState6 = Object(external_root_React_commonjs2_react_commonjs_react_amd_react_["useState"])(null),
+    highlightedMessage = _useState6[0],
+    setHighlightedMessage = _useState6[1];
+  var _useState7 = Object(external_root_React_commonjs2_react_commonjs_react_amd_react_["useState"])(null),
+    startingPoint = _useState7[0],
+    setStartingPoint = _useState7[1];
   var _props = props,
     _props$userListQuery = _props.userListQuery,
     userListQuery = _props$userListQuery === void 0 ? null : _props$userListQuery,
@@ -40077,8 +40077,8 @@ function Component() {
       setShowThread(false);
       setShowSearch(!showSearch);
     },
-    onReplyInThread: function onReplyInThread(_ref4) {
-      var message = _ref4.message;
+    onReplyInThread: function onReplyInThread(_ref) {
+      var message = _ref.message;
       // parent message
       setShowSettings(false);
       setShowSearch(false);
@@ -40087,8 +40087,8 @@ function Component() {
         setShowThread(true);
       }
     },
-    onQuoteMessageClick: function onQuoteMessageClick(_ref5) {
-      var message = _ref5.message;
+    onQuoteMessageClick: function onQuoteMessageClick(_ref2) {
+      var message = _ref2.message;
       // thread message
       setShowSettings(false);
       setShowSearch(false);
@@ -40125,9 +40125,9 @@ function Component() {
     onHeaderActionClick: function onHeaderActionClick() {
       setShowThread(false);
     },
-    onMoveToParentMessage: function onMoveToParentMessage(_ref6) {
-      var message = _ref6.message,
-        channel = _ref6.channel;
+    onMoveToParentMessage: function onMoveToParentMessage(_ref3) {
+      var message = _ref3.message,
+        channel = _ref3.channel;
       if ((channel === null || channel === void 0 ? void 0 : channel.url) !== (currentChannel === null || currentChannel === void 0 ? void 0 : currentChannel.url)) {
         setCurrentChannel(channel);
       }
