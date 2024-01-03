@@ -69,7 +69,7 @@ export default function Component(props) {
               props.model?.channelUrlList
                 ? {
                     channelListQuery: {
-                      channelUrlsFilter: channelUrlList,
+                      channelUrlsFilter: props.model?.channelUrlList,
                     },
                   }
                 : null
