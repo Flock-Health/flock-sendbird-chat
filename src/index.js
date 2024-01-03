@@ -9,7 +9,7 @@ import Thread from "@sendbird/uikit-react/Thread";
 import "sendbird-uikit/dist/index.css";
 
 import "./index.css";
-export default function Component() {
+export default function Component(props) {
   const [currentChannel, setCurrentChannel] = useState(null);
   const [showThread, setShowThread] = useState(false);
   const [threadTargetMessage, setThreadTargetMessage] = useState(null);

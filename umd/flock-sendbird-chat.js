@@ -39984,7 +39984,7 @@ var src_0 = __webpack_require__(17);
 
 
 
-function Component() {
+function Component(props) {
   var _props$model, _props$model2, _props$model3, _props$model4;
   var _useState = Object(external_root_React_commonjs2_react_commonjs_react_amd_react_["useState"])(null),
     currentChannel = _useState[0],
@@ -40007,25 +40007,24 @@ function Component() {
   var _useState7 = Object(external_root_React_commonjs2_react_commonjs_react_amd_react_["useState"])(null),
     startingPoint = _useState7[0],
     setStartingPoint = _useState7[1];
-  var _props = props,
-    _props$userListQuery = _props.userListQuery,
+  var _props$userListQuery = props.userListQuery,
     userListQuery = _props$userListQuery === void 0 ? null : _props$userListQuery,
-    _props$profileUrl = _props.profileUrl,
+    _props$profileUrl = props.profileUrl,
     profileUrl = _props$profileUrl === void 0 ? "" : _props$profileUrl,
-    _props$dateLocale = _props.dateLocale,
+    _props$dateLocale = props.dateLocale,
     dateLocale = _props$dateLocale === void 0 ? null : _props$dateLocale,
-    _props$colorSet = _props.colorSet,
+    _props$colorSet = props.colorSet,
     colorSet = _props$colorSet === void 0 ? null : _props$colorSet,
-    _props$allowProfileEd = _props.allowProfileEdit,
+    _props$allowProfileEd = props.allowProfileEdit,
     allowProfileEdit = _props$allowProfileEd === void 0 ? false : _props$allowProfileEd,
-    _props$onProfileEditS = _props.onProfileEditSuccess,
+    _props$onProfileEditS = props.onProfileEditSuccess,
     onProfileEditSuccess = _props$onProfileEditS === void 0 ? null : _props$onProfileEditS,
-    _props$disableAutoSel = _props.disableAutoSelect,
+    _props$disableAutoSel = props.disableAutoSelect,
     disableAutoSelect = _props$disableAutoSel === void 0 ? false : _props$disableAutoSel,
-    showSearchIcon = _props.showSearchIcon,
-    replyType = _props.replyType,
-    isMultipleFilesMessageEnabled = _props.isMultipleFilesMessageEnabled,
-    _props$channelUrlList = _props.channelUrlList,
+    showSearchIcon = props.showSearchIcon,
+    replyType = props.replyType,
+    isMultipleFilesMessageEnabled = props.isMultipleFilesMessageEnabled,
+    _props$channelUrlList = props.channelUrlList,
     channelUrlList = _props$channelUrlList === void 0 ? null : _props$channelUrlList;
   return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(Sendbird, {
     appId: (_props$model = props.model) === null || _props$model === void 0 ? void 0 : _props$model.sendbirdAppId,
