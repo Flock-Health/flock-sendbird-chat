@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import {
-  SendBirdProvider,
+  SendirdProvider,
   ChannelList,
   Channel,
   ChannelSettings,
@@ -12,13 +12,11 @@ import "./index.css";
 export default function Component() {
   const [currentChannel, setCurrentChannel] = useState(null);
   const [showThread, setShowThread] = useState(false);
-  const [threadTargetMessage, setThreadTargetMessage] =
-    (useState < SendableMessageType) | (null > null);
+  const [threadTargetMessage, setThreadTargetMessage] = useState(null);
   const [showSettings, setShowSettings] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
-  const [highlightedMessage, setHighlightedMessage] =
-    (useState < number) | (null > null);
-  const [startingPoint, setStartingPoint] = (useState < number) | (null > null);
+  const [highlightedMessage, setHighlightedMessage] = useState(null);
+  const [startingPoint, setStartingPoint] = useState(null);
 
   const {
     userListQuery = null,
@@ -38,7 +36,7 @@ export default function Component() {
   } = props;
 
   return (
-    <SendBirdProvider
+    <SendirdProvider
       appId={props.model?.sendbirdAppId}
       userId={props.model?.userId}
       accessToken={props.model?.accessToken}
@@ -164,6 +162,6 @@ export default function Component() {
           />
         )}
       </div>
-    </SendBirdProvider>
+    </SendirdProvider>
   );
 }
