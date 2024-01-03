@@ -32,7 +32,6 @@ export default function Component(props) {
     showSearchIcon,
     replyType,
     isMultipleFilesMessageEnabled,
-    channelUrlList = null,
   } = props;
 
   return (
@@ -67,7 +66,7 @@ export default function Component(props) {
               }
             }}
             queries={
-              channelUrlList
+              props.model?.channelUrlList
                 ? {
                     channelListQuery: {
                       channelUrlsFilter: channelUrlList,

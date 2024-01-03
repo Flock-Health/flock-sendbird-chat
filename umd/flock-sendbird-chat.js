@@ -39985,7 +39985,7 @@ var src_0 = __webpack_require__(17);
 
 
 function Component(props) {
-  var _props$model, _props$model2, _props$model3, _props$model4;
+  var _props$model, _props$model2, _props$model3, _props$model4, _props$model5;
   var _useState = Object(external_root_React_commonjs2_react_commonjs_react_amd_react_["useState"])(null),
     currentChannel = _useState[0],
     setCurrentChannel = _useState[1];
@@ -40023,9 +40023,7 @@ function Component(props) {
     disableAutoSelect = _props$disableAutoSel === void 0 ? false : _props$disableAutoSel,
     showSearchIcon = props.showSearchIcon,
     replyType = props.replyType,
-    isMultipleFilesMessageEnabled = props.isMultipleFilesMessageEnabled,
-    _props$channelUrlList = props.channelUrlList,
-    channelUrlList = _props$channelUrlList === void 0 ? null : _props$channelUrlList;
+    isMultipleFilesMessageEnabled = props.isMultipleFilesMessageEnabled;
   return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(Sendbird, {
     appId: (_props$model = props.model) === null || _props$model === void 0 ? void 0 : _props$model.sendbirdAppId,
     userId: (_props$model2 = props.model) === null || _props$model2 === void 0 ? void 0 : _props$model2.userId,
@@ -40057,7 +40055,7 @@ function Component(props) {
         setCurrentChannel(null);
       }
     },
-    queries: channelUrlList ? {
+    queries: ((_props$model5 = props.model) === null || _props$model5 === void 0 ? void 0 : _props$model5.channelUrlList) ? {
       channelListQuery: {
         channelUrlsFilter: channelUrlList
       }
