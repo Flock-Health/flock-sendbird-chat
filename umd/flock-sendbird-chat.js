@@ -39985,7 +39985,7 @@ var src_0 = __webpack_require__(17);
 
 
 function Component(props) {
-  var _props$model, _props$model2, _props$model3, _props$model4, _props$model5;
+  var _props$model, _props$model2, _props$model3, _props$model4, _props$model5, _props$model6;
   var _useState = Object(external_root_React_commonjs2_react_commonjs_react_amd_react_["useState"])(null),
     currentChannel = _useState[0],
     setCurrentChannel = _useState[1];
@@ -40057,7 +40057,7 @@ function Component(props) {
     },
     queries: ((_props$model5 = props.model) === null || _props$model5 === void 0 ? void 0 : _props$model5.channelUrlList) ? {
       channelListQuery: {
-        channelUrlsFilter: channelUrlList
+        channelUrlsFilter: (_props$model6 = props.model) === null || _props$model6 === void 0 ? void 0 : _props$model6.channelUrlList
       }
     } : null
   })), /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {
