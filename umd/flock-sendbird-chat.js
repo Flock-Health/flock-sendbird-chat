@@ -41471,7 +41471,8 @@ function Component(props) {
       return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement(GroupChannelListItem, src_extends({}, props, {
         renderChannelAction: function renderChannelAction() {
           return /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("span", null, props.channel.customType);
-        }
+        },
+        onLeaveChannel: function onLeaveChannel() {}
       }));
     }
   })), /*#__PURE__*/external_root_React_commonjs2_react_commonjs_react_amd_react_default.a.createElement("div", {

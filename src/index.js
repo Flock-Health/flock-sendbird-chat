@@ -82,6 +82,7 @@ export default function Component(props) {
                   renderChannelAction={() => {
                     return <span>{props.channel.customType}</span>;
                   }}
+                  onLeaveChannel={() => {}}
                 />
               );
             }}
