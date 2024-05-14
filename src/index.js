@@ -6,7 +6,7 @@ import {
   ChannelSettings,
 } from "@sendbird/uikit-react";
 import Thread from "@sendbird/uikit-react/Thread";
-import { GroupChannelListItem } from "@sendbird/uikit-react/GroupChannelList/components/GroupChannelListItem";
+import ChannelPreview from "@sendbird/uikit-react/ChannelList/components/ChannelPreview";
 import "sendbird-uikit/dist/index.css";
 
 import "./index.css";
@@ -77,7 +77,7 @@ export default function Component(props) {
             }
             renderChannelPreview={(props) => {
               return (
-                <GroupChannelListItem
+                <ChannelPreview
                   {...props}
                   renderChannelAction={() => {
                     return <span>{props.channel.customType}</span>;
