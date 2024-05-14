@@ -35,7 +35,7 @@
     "react-component"
   ],
   "dependencies": {
-    "@sendbird/uikit-react": "^3.6.8",
+    "@sendbird/uikit-react": "^3.14.6",
     "sendbird-uikit": "^2.7.2"
   }
 }
