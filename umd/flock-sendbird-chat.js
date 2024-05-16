@@ -41464,7 +41464,8 @@ function Component(props) {
     },
     queries: ((_props$model5 = props.model) === null || _props$model5 === void 0 ? void 0 : _props$model5.channelUrlList) ? {
       channelListQuery: {
-        channelUrlsFilter: (_props$model6 = props.model) === null || _props$model6 === void 0 ? void 0 : _props$model6.channelUrlList
+        channelUrlsFilter: (_props$model6 = props.model) === null || _props$model6 === void 0 ? void 0 : _props$model6.channelUrlList,
+        includeEmpty: true
       }
     } : null,
     renderChannelPreview: function renderChannelPreview(props) {
