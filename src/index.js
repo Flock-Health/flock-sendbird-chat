@@ -20,7 +20,6 @@ export default function Component(props) {
     dateLocale = null,
     colorSet = null,
     allowProfileEdit = false,
-    onProfileEditSuccess = null,
     disableAutoSelect = false,
     // The below configs are duplicates of the Dashboard UIKit Configs.
     // Since their default values will be set in the Sendbird component,
@@ -41,16 +40,12 @@ export default function Component(props) {
       dateLocale={dateLocale}
       userListQuery={userListQuery}
       colorSet={colorSet}
-      onUserProfileMessage={(channel) => {
-        setCurrentChannel(channel);
-      }}
     >
       <div className="sendbird-app__wrap">
         <div className="sendbird-app__channellist-wrap">
           <ChannelList
             allowProfileEdit={allowProfileEdit}
             activeChannelUrl={currentChannel?.url}
-            onProfileEditSuccess={onProfileEditSuccess}
             disableAutoSelect={disableAutoSelect}
             onChannelSelect={(channel) => {
               if (channel) {
