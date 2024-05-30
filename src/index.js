@@ -62,14 +62,12 @@ export default function Component(props) {
                       channelUrlsFilter: props.model?.channelUrlList,
                       includeEmpty: true,
                       includeFrozen: true,
-                      order: GroupChannelListOrder.CHANNEL_NAME_ALPHABETICAL,
                     },
                   }
                 : {
                     channelListQuery: {
                       includeEmpty: true,
                       includeFrozen: true,
-                      order: GroupChannelListOrder.CHANNEL_NAME_ALPHABETICAL,
                     },
                   }
             }
