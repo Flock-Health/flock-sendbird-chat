@@ -13,8 +13,6 @@ export default function Component(props) {
   const [currentChannel, setCurrentChannel] = useState(null);
   const [showSettings, setShowSettings] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
-  const [highlightedMessage, setHighlightedMessage] = useState(null);
-  const [startingPoint, setStartingPoint] = useState(null);
 
   const {
     userListQuery = null,
@@ -55,8 +53,6 @@ export default function Component(props) {
             onProfileEditSuccess={onProfileEditSuccess}
             disableAutoSelect={disableAutoSelect}
             onChannelSelect={(channel) => {
-              setStartingPoint?.(null);
-              setHighlightedMessage?.(null);
               if (channel) {
                 setCurrentChannel(channel);
               } else {
@@ -103,15 +99,7 @@ export default function Component(props) {
               setShowSettings(false);
               setShowSearch(!showSearch);
             }}
-            onMessageAnimated={() => {
-              setHighlightedMessage(null);
-            }}
-            onMessageHighlighted={() => {
-              setHighlightedMessage?.(null);
-            }}
             showSearchIcon={showSearchIcon}
-            startingPoint={startingPoint}
-            animatedMessage={highlightedMessage}
             isReactionEnabled={true}
             replyType={replyType}
             isMessageGroupingEnabled={true}
