@@ -4,6 +4,7 @@ import {
   ChannelList,
   Channel,
   ChannelSettings,
+  GroupChannelListOrder,
 } from "@sendbird/uikit-react";
 import ChannelPreview from "@sendbird/uikit-react/ChannelList/components/ChannelPreview";
 import "sendbird-uikit/dist/index.css";
@@ -61,14 +62,14 @@ export default function Component(props) {
                       channelUrlsFilter: props.model?.channelUrlList,
                       includeEmpty: true,
                       includeFrozen: true,
-                      order: "channel_name_alphabetical",
+                      order: GroupChannelListOrder.CHANNEL_NAME_ALPHABETICAL,
                     },
                   }
                 : {
                     channelListQuery: {
                       includeEmpty: true,
                       includeFrozen: true,
-                      order: "channel_name_alphabetical",
+                      order: GroupChannelListOrder.CHANNEL_NAME_ALPHABETICAL,
                     },
                   }
             }
