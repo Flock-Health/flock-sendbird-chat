@@ -55,22 +55,13 @@ export default function Component(props) {
                 setCurrentChannel(null);
               }
             }}
-            queries={
-              props.model?.channelUrlList
-                ? {
-                    channelListQuery: {
-                      channelUrlsFilter: props.model?.channelUrlList,
-                      includeEmpty: true,
-                      includeFrozen: true,
-                    },
-                  }
-                : {
-                    channelListQuery: {
-                      includeEmpty: true,
-                      includeFrozen: true,
-                    },
-                  }
-            }
+            queries={{
+              channelListQuery: {
+                channelUrlsFilter: props.model?.channelUrlList,
+                includeEmpty: true,
+                includeFrozen: true,
+              },
+            }}
             renderChannelPreview={(props) => {
               return (
                 <ChannelPreview
