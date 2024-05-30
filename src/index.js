@@ -60,9 +60,15 @@ export default function Component(props) {
                     channelListQuery: {
                       channelUrlsFilter: props.model?.channelUrlList,
                       includeEmpty: true,
+                      includeFrozen: true,
                     },
                   }
-                : null
+                : {
+                    channelListQuery: {
+                      includeEmpty: true,
+                      includeFrozen: true,
+                    },
+                  }
             }
             renderChannelPreview={(props) => {
               return (
