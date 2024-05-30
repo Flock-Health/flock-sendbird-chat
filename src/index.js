@@ -5,15 +5,12 @@ import {
   Channel,
   ChannelSettings,
 } from "@sendbird/uikit-react";
-import Thread from "@sendbird/uikit-react/Thread";
 import ChannelPreview from "@sendbird/uikit-react/ChannelList/components/ChannelPreview";
 import "sendbird-uikit/dist/index.css";
 
 import "./index.css";
 export default function Component(props) {
   const [currentChannel, setCurrentChannel] = useState(null);
-  const [showThread, setShowThread] = useState(false);
-  const [threadTargetMessage, setThreadTargetMessage] = useState(null);
   const [showSettings, setShowSettings] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [highlightedMessage, setHighlightedMessage] = useState(null);
@@ -100,31 +97,11 @@ export default function Component(props) {
             channelUrl={currentChannel?.url || ""}
             onChatHeaderActionClick={() => {
               setShowSearch(false);
-              setShowThread(false);
               setShowSettings(!showSettings);
             }}
             onSearchClick={() => {
               setShowSettings(false);
-              setShowThread(false);
               setShowSearch(!showSearch);
-            }}
-            onReplyInThread={({ message }) => {
-              // parent message
-              setShowSettings(false);
-              setShowSearch(false);
-              if (replyType === "THREAD") {
-                setThreadTargetMessage(message);
-                setShowThread(true);
-              }
-            }}
-            onQuoteMessageClick={({ message }) => {
-              // thread message
-              setShowSettings(false);
-              setShowSearch(false);
-              if (replyType === "THREAD") {
-                setThreadTargetMessage(message);
-                setShowThread(true);
-              }
             }}
             onMessageAnimated={() => {
               setHighlightedMessage(null);
@@ -151,27 +128,6 @@ export default function Component(props) {
               }}
             />
           </div>
-        )}
-        {showThread && (
-          <Thread
-            className="sendbird-app__thread"
-            channelUrl={currentChannel?.url || ""}
-            message={threadTargetMessage}
-            onHeaderActionClick={() => {
-              setShowThread(false);
-            }}
-            onMoveToParentMessage={({ message, channel }) => {
-              if (channel?.url !== currentChannel?.url) {
-                setCurrentChannel(channel);
-              }
-              if (message?.messageId !== highlightedMessage) {
-                setStartingPoint?.(message?.createdAt);
-              }
-              setTimeout(() => {
-                setHighlightedMessage(message?.messageId);
-              }, 500);
-            }}
-          />
         )}
       </div>
     </SendBirdProvider>
